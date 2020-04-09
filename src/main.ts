@@ -21,6 +21,7 @@ async function run() {
     const v = core.getInput('v');
     const x = core.getInput('x');
     const ldflags = core.getInput('ldflags');
+    const image = core.getInput('image');
     const xgo = await installer.getXgo(xgo_version);
 
     // Run xgo
@@ -49,6 +50,10 @@ async function run() {
     if (ldflags) {
       args.push('-ldflags', ldflags);
     }
+    if (image) {
+      args.push('-image', image);
+    }
+
     args.push(workspace);
     await exec.exec(xgo, args);
 

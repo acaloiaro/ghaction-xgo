@@ -29,6 +29,9 @@ inputs:
   x:
     description: 'Prints the build commands as compilation progresses'
     default: 'false'
+  image:
+    description: 'Provide a custom xgo image to use for building artifacts'
+
   ldflags:
     description: 'Arguments to pass on each go tool link invocation'
 
